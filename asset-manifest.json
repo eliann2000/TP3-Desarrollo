@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TP3-Desarrollo/static/css/main.478d1b5a.css",
+    "main.js": "/TP3-Desarrollo/static/js/main.50d215b9.js",
+    "static/js/453.26b315f4.chunk.js": "/TP3-Desarrollo/static/js/453.26b315f4.chunk.js",
+    "index.html": "/TP3-Desarrollo/index.html",
+    "main.478d1b5a.css.map": "/TP3-Desarrollo/static/css/main.478d1b5a.css.map",
+    "main.50d215b9.js.map": "/TP3-Desarrollo/static/js/main.50d215b9.js.map",
+    "453.26b315f4.chunk.js.map": "/TP3-Desarrollo/static/js/453.26b315f4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.478d1b5a.css",
+    "static/js/main.50d215b9.js"
+  ]
+}

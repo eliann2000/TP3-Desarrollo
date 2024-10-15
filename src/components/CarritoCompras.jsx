@@ -23,27 +23,26 @@ function CarritoCompras(props) {
       </div>
 
       {mostrarCarrito === true && (
-        <div style={{ position: 'absolute', top: '30px', right: '0', backgroundColor: 'white', border: '1px solid #ccc', padding: '10px', width: '300px' }}>
-          <h2>Carrito de Compras</h2>
-          {carrito.length === 0 ? (
-            <p>No hay productos en el carrito</p>
-          ) : (
-            <div>
-              {carrito.map(function (producto) {
-                return (
-                  <div key={producto.id} style={{ border: '1px solid #ccc', padding: '5px', marginBottom: '5px' }}>
-                    <h3>{producto.title}</h3>
-                    <p>Precio: ${producto.price}</p>
-                    <img src={producto.thumbnail} alt={producto.title} style={{ width: '50px' }} />
-                    <button onClick={() => eliminarDelCarrito(producto.id)}>Eliminar</button>
-                  </div>
-                );
-              })}
-              <h3>Total: ${calcularTotal()}</h3>
+        <div className="carrito-compras">
+        <h2>Carrito de Compras</h2>
+        {carrito.length === 0 ? (
+          <p>No hay productos en el carrito</p>
+        ) : (
+          carrito.map((producto) => (
+            <div key={producto.id} className="producto-carrito">
+              <img src={producto.thumbnail} alt={producto.title} />
+              <div>
+                <h3>{producto.title}</h3>
+                <p>Precio: ${producto.price}</p>
+              </div>
+              <button onClick={() => eliminarDelCarrito(producto.id)}>Eliminar</button>
             </div>
-          )}
-          <Link to="/" onClick={() => setMostrarCarrito(false)}>Volver</Link>
-        </div>
+          ))
+        )}
+        <h3>Total: ${calcularTotal()}</h3>
+        <Link to="/" onClick={() => setMostrarCarrito(false)}>Volver</Link>
+      </div>
+      
       )}
     </div>
   );

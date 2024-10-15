@@ -28,9 +28,10 @@ function App() {
   }
 
   return (
-    <Router>
+    <Router basename="/<NOMBRE-del-repositorio>">
       <CarritoCompras carrito={carrito} eliminarDelCarrito={eliminarDelCarrito} />
       <ResumenCarrito carrito={carrito} />
+      
       <Routes>
         <Route path="/" element={<BuscarProductos />} />
         <Route path="/producto/:id" element={<DetalleProducto agregarAlCarrito={agregarAlCarrito} />} />
@@ -38,7 +39,5 @@ function App() {
     </Router>
   );
 }
-
-
 
 export default App;

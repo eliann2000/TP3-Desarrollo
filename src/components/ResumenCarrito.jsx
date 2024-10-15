@@ -7,7 +7,6 @@ function ResumenCarrito({ carrito }) {
     totalPrecio += producto.price;
   });
   
-
   return (
     <div style={{ padding: '10px', border: '1px solid #ccc', marginBottom: '20px' }}>
       <h2>Resumen del carrito</h2>

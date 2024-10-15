@@ -5,7 +5,7 @@ function DetalleProducto(props) {
   const { id } = useParams();
   const [producto, setProducto] = useState(null);
 
-  useEffect(function() {
+  useEffect(() => {
     async function obtenerDetalles() {
       const respuesta = await fetch(`https://api.mercadolibre.com/items/${id}`);
       const data = await respuesta.json();
@@ -18,18 +18,20 @@ function DetalleProducto(props) {
     return <p>Cargando</p>;
   }
 
-  function manejarCompra () {
+  function manejarCompra() {
     props.agregarAlCarrito(producto);
   }
 
   return (
-    <div>
-      <h1>{producto.title}</h1>
-      <p>Precio: ${producto.price}</p>
-      <img src={producto.pictures[0]?.url} alt={producto.title} />
-      <p>{producto.description}</p>
-      <button onClick={manejarCompra }>Comprar</button>
-      <Link to="/">Volver</Link>
+    <div className="detalle-contenedor">
+      <h1 className="detalle-titulo">{producto.title}</h1>
+      <div className="detalle-imagen-contenedor">
+        <img src={producto.pictures[0]?.url} alt={producto.title} className="detalle-imagen" />
+      </div>
+      <p className="detalle-precio">Precio: ${producto.price}</p>
+      <p className="detalle-descripcion">{producto.description}</p>
+      <button onClick={manejarCompra} className="boton-comprar">Agregar al Carrito</button>
+      <Link to="/" className="detalle-volver">Volver</Link>
     </div>
   );
 }

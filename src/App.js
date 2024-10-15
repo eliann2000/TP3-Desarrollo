@@ -28,7 +28,7 @@ function App() {
   }
 
   return (
-    <Router basename="/<NOMBRE-del-repositorio>">
+    <Router basename="/TP3-Desarrollo">
       <CarritoCompras carrito={carrito} eliminarDelCarrito={eliminarDelCarrito} />
       <ResumenCarrito carrito={carrito} />
       
